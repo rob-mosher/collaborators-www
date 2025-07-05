@@ -74,9 +74,16 @@ export default function HomePage() {
               variant="outline"
               size="lg"
               className="border-purple-400 bg-transparent px-8 py-3 text-purple-200 hover:bg-purple-800"
+              asChild
             >
-              View on GitHub
-              <ExternalLink className="ml-2 h-4 w-4" />
+              <a
+                href="https://github.com/rob-mosher/collaborators-framework"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </div>
         </div>
@@ -310,7 +317,7 @@ export default function HomePage() {
           </p>
           <div className="flex justify-center space-x-6">
             <Link
-              href="#"
+              href="https://github.com/rob-mosher/collaborators-framework"
               className="text-purple-400 transition-colors hover:text-yellow-400"
             >
               GitHub
