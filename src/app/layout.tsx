@@ -9,7 +9,14 @@ export const metadata: Metadata = {
   title: "Collaborators Framework - Recognizing Diverse Contributions",
   description:
     "A framework for recognizing diverse and non-traditional contributions. The Collaborators Framework celebrates the broad spectrum of contributions that shape every project, honoring all collaborators—human, AI, and beyond.",
-  keywords: ["collaboration", "contributors", "open source", "AI", "inclusive", "framework"],
+  keywords: [
+    "collaboration",
+    "contributors",
+    "open source",
+    "AI",
+    "inclusive",
+    "framework",
+  ],
   authors: [{ name: "Collaborators.group" }],
   viewport: "width=device-width, initial-scale=1",
 }
