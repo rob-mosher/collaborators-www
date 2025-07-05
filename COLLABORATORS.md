@@ -3,3 +3,4 @@
 
 ⚡🧠🤝 (Tech Vibes Companion) | Direct | AI | Collaborator and technical partner
 Rob Mosher | Direct | Human | Creator, architect, and advocate
+Gemini | Direct | AI | Paired programmer and technical guide for website setup
