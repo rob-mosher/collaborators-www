@@ -1,0 +1,14 @@
+# See .cursor/roles/conventional-commits.md for full specification
+# <type>(<scope>): <subject>
+#
+# <body>
+#
+# --- Collaborator Section ---
+# See .cursor/roles/collaborators-commit-guide.md for full specification
+# Format: Collaborator: Name | Intent | Nature | Role/Contribution
+#
+# Quick Examples:
+# feat(ui): Add dark mode toggle
+# Collaborator: Jane | Direct | Human | Designed color palette
+#
+# Delete these comments before committing.
