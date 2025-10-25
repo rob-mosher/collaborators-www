@@ -4,6 +4,27 @@ import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Users, FileText, Heart } from "lucide-react"
 import Link from "next/link"
 
+function CodeExample({ content }: { content: string }) {
+  const lines = content.split("\n")
+  return (
+    <>
+      {lines.map((line, lineIndex) => (
+        <div key={lineIndex}>
+          {line.split(" | ").map((part, partIndex) => (
+            <span
+              key={partIndex}
+              className={partIndex % 2 === 1 ? "text-purple-300" : ""}
+            >
+              {part}
+              {partIndex < line.split(" | ").length - 1 && " | "}
+            </span>
+          ))}
+        </div>
+      ))}
+    </>
+  )
+}
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900">
@@ -44,7 +65,6 @@ export default function HomePage() {
           </div>
         </div>
       </header>
-
       {/* Hero Section */}
       <section className="px-4 py-20">
         <div className="container mx-auto max-w-4xl text-center">
@@ -88,9 +108,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* What is Collaborators Section */}
-      <section id="about" className="px-4 py-16">
+      <section id="about" className="bg-purple-800/30 px-4 py-16">
         <div className="container mx-auto max-w-4xl">
           <Card className="border-purple-600/30 bg-white/10 backdrop-blur-sm">
             <CardHeader>
@@ -135,7 +154,54 @@ export default function HomePage() {
           </Card>
         </div>
       </section>
+      {/* Examples Section */}
+      <section id="examples" className="px-4 py-16">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="mb-8 text-center text-3xl font-bold text-white">
+            Examples
+          </h2>
+          <div className="space-y-8">
+            <Card className="border-purple-600/30 bg-white/10 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-yellow-400">
+                  COLLABORATORS.md
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <pre className="overflow-x-auto rounded-md bg-black/20 p-4 font-mono text-sm leading-6 text-purple-100">
+                  <code>
+                    <CodeExample
+                      content={`Jane Doe | Direct | Human | Creator, architect, and advocate
+ChatGPT | Direct | AI | Collaborator and technical partner
+*Wild Geese* by Mary Oliver | Indirect | Poem | Invitation to inclusivity and belonging`}
+                    />
+                  </code>
+                </pre>
+              </CardContent>
+            </Card>
+            <Card className="border-purple-600/30 bg-white/10 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-yellow-400">
+                  Git Commit Message
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <pre className="overflow-x-auto rounded-md bg-black/20 p-4 font-mono text-sm text-purple-100">
+                  <code>
+                    <CodeExample
+                      content={`feat: implement new feature X
 
+This commit introduces feature X with enhancements to Y and Z.
+
+Collaborator: Claude | Indirect | AI | Provided iterative inspiration and guidance`}
+                    />
+                  </code>
+                </pre>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>{" "}
       {/* How to Use Section */}
       <section id="how-to-use" className="bg-purple-800/30 px-4 py-16">
         <div className="container mx-auto max-w-4xl">
@@ -201,9 +267,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Get Involved Section */}
-      <section id="get-involved" className="bg-purple-800/30 px-4 py-16">
+      <section id="get-involved" className="px-4 py-16">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="mb-6 flex items-center justify-center text-3xl font-bold text-white">
             <Heart className="mr-3 h-8 w-8 text-yellow-400" />
@@ -232,7 +297,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="border-t border-purple-700/50 bg-purple-900/50 px-4 py-8 backdrop-blur-sm">
         <div className="container mx-auto text-center">
