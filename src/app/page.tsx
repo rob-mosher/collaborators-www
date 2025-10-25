@@ -10,15 +10,20 @@ function CodeExample({ content }: { content: string }) {
     <>
       {lines.map((line, lineIndex) => (
         <div key={lineIndex}>
-          {line.split(" | ").map((part, partIndex) => (
-            <span
-              key={partIndex}
-              className={partIndex % 2 === 1 ? "text-purple-300" : ""}
-            >
-              {part}
-              {partIndex < line.split(" | ").length - 1 && " | "}
-            </span>
-          ))}
+          {line.trim() === "" ? (
+            // for intentional empty lines
+            <span>&nbsp;</span>
+          ) : (
+            line.split(" | ").map((part, partIndex) => (
+              <span
+                key={partIndex}
+                className={partIndex % 2 === 1 ? "text-purple-300" : ""}
+              >
+                {part}
+                {partIndex < line.split(" | ").length - 1 && " | "}
+              </span>
+            ))
+          )}
         </div>
       ))}
     </>
